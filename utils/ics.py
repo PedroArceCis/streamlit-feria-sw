@@ -15,10 +15,11 @@ def build_ics(sessions_df: pd.DataFrame, calendar_name: str = "Mi Feria"):
     lines.append("VERSION:2.0")
     lines.append(f"X-WR-CALNAME:{calendar_name}")
     for _, row in sessions_df.iterrows():
-        uid = f"{row['id']}@feria"
+        uid = f"{row['sub_id']}@feria"
         dtstart = _dtfmt(str(row['start']))
         dtend = _dtfmt(str(row['end']))
-        title = str(row['title']).replace("\\n"," ")
+        # Usar project_title si existe, si no usar title
+        title = str(row.get('project_title', row.get('title', ''))).replace("\\n"," ")
         desc = f"Track: {row.get('track','-')}"
         lines += [
             "BEGIN:VEVENT",

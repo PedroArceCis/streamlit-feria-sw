@@ -15,9 +15,9 @@ fav_ids = st.session_state["favorites"]
 if not fav_ids:
     st.info("Aún no tienes favoritos. En **Explorar** puedes marcar ⭐ proyectos para guardarlos aquí.")
 else:
-    fav_df = projects[projects['id'].isin(fav_ids)][["id","title","one_liner","industries"]]
+    fav_df = projects[projects['sub_id'].isin(fav_ids)][["sub_id","title","one_liner","industries"]]
     fav_df["industries"] = fav_df["industries"].apply(lambda x: ", ".join(x))
-    st.dataframe(fav_df.set_index("id"))
+    st.dataframe(fav_df.set_index("sub_id"))
 
 # Comparación
 st.subheader("Comparación (hasta 3)")
@@ -26,10 +26,10 @@ if len(cmp_ids) < 2:
     st.info("Selecciona **al menos 2** proyectos en **Explorar** para comparar. Máximo 3.")
 else:
     cols = ["title","one_liner","industries","tech_stack","trl","has_live_demo"]
-    comp_df = projects[projects['id'].isin(cmp_ids)][["id"]+cols].copy()
+    comp_df = projects[projects['sub_id'].isin(cmp_ids)][["sub_id"]+cols].copy()
     comp_df["industries"] = comp_df["industries"].apply(lambda x: ", ".join(x))
     comp_df["tech_stack"] = comp_df["tech_stack"].apply(lambda x: ", ".join(x))
-    st.dataframe(comp_df.set_index("id"))
+    st.dataframe(comp_df.set_index("sub_id"))
     if st.button("Limpiar comparación"):
         st.session_state["compare"] = []
 
@@ -39,8 +39,8 @@ ag_ids = st.session_state["agenda"]
 if not ag_ids:
     st.info("Tu agenda está vacía. En **Programa** añade sesiones.")
 else:
-    ag_df = sessions[sessions['id'].isin(ag_ids)][["id","title","start","end","track"]]
-    st.table(ag_df.set_index("id"))
+    ag_df = sessions[sessions['sub_id'].isin(ag_ids)][["sub_id","date","project_title","start","end","track"]]
+    st.table(ag_df.set_index("sub_id"))
     ics_str = build_ics(ag_df)
     st.download_button("⬇️ Descargar .ics", data=ics_str, file_name="mi_agenda.ics", mime="text/calendar")
 

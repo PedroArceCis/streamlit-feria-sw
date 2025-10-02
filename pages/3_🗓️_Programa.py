@@ -7,8 +7,9 @@ sessions = load_sessions()
 
 st.title("🗓️ Programa")
 
-# Extraer días y tracks
-sessions['date'] = pd.to_datetime(sessions['start']).dt.date
+
+# Extraer días y tracks correctamente usando el campo 'date' de cada sesión
+sessions['date'] = pd.to_datetime(sessions['date']).dt.date
 days = sorted(sessions['date'].unique())
 tracks = sorted([t for t in sessions['track'].dropna().unique()])
 
@@ -30,19 +31,25 @@ if days:
     else:
         for _, row in subset.iterrows():
             with st.container(border=True):
-                st.markdown(f"**{row['title']}**  \n"
+                # Asegurar que speakers sea lista
+                speakers = row['speakers']
+                if isinstance(speakers, str):
+                    speakers = [v.strip() for v in speakers.split('|') if v.strip()]
+                elif not isinstance(speakers, list) or pd.isna(speakers):
+                    speakers = []
+                st.markdown(f"**{row['project_title']}**  \n"
                             f"🕒 {row['start']} — {row['end']}  \n"
-                            f"🎤 {', '.join(row['speakers']) if row['speakers'] else '—'}  \n"
-                            f"🎯 Track: {row['track'] or '—'}")
+                            f"🎤 {', '.join(speakers) if speakers else '—'}  \n"
+                            f"🎯 Área: {row['track'] or '—'}")
                 c1, c2 = st.columns(2)
                 with c1:
-                    if row['streaming_url']:
-                        st.link_button("▶️ Ver transmisión", row['streaming_url'])
+                    if row['sub_id']:
+                        st.link_button("▶️ Ver transmisión en sala " + str(row['room']), row['sub_id'])
                 with c2:
-                    add = st.button("➕ Añadir a mi agenda", key=f"agenda_{row['id']}")
+                    add = st.button("➕ Añadir a mi agenda", key=f"agenda_{row['sub_id']}")
                     if add:
-                        if row['id'] not in st.session_state["agenda"]:
-                            st.session_state["agenda"].append(row['id'])
+                        if row['sub_id'] not in st.session_state["agenda"]:
+                            st.session_state["agenda"].append(row['sub_id'])
                             st.toast("Sesión añadida a tu agenda")
                         else:
                             st.warning("Esta sesión ya está en tu agenda")

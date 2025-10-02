@@ -1,0 +1,378 @@
+[
+  {
+    "id": "P001",
+    "title": "Visión Clínica",
+    "one_liner": "IA para triage rápido en imágenes médicas",
+    "summary": "En salas con alta demanda, el triage visual es lento y variable.",
+    "problem": "Demoras en priorización de pacientes.",
+    "solution": "Modelo IA que sugiere prioridad y explica hallazgos.",
+    "industries": "Salud",
+    "tech_stack": "Python|PyTorch|Streamlit",
+    "trl": "Piloto",
+    "demo_url": "https://demo.example/vision",
+    "repo_url": "https://repo.example/vision",
+    "site_url": "https://site.example/vision",
+    "contact_url": "mailto:equipo1@example.com",
+    "team": "PM|ML Engineer|MD",
+    "languages": "ES|EN",
+    "duration_pitch": 7,
+    "has_live_demo": true,
+    "awards": "Seleccionado 2025",
+   "track": "Salud",
+   "speakers": "MD|Data Scientist",
+    "schedules": [
+      {
+       "sub_id": "P001-1",
+        "date": "2024-11-15",
+        "start": "10:00",
+        "end": "11:00",
+        "type": "presentación",
+        "room": "A"
+      },
+      {
+       "sub_id": "P001-2",
+        "date": "2024-11-15",
+        "start": "12:30",
+        "end": "13:30",
+        "type": "presentación",
+        "room": "B"
+      },
+      {
+       "sub_id": "P001-3",
+        "date": "2024-11-16",
+        "start": "11:15",
+        "end": "12:15",
+        "type": "presentación",
+        "room": "C"
+      },
+      {
+       "sub_id": "P001-4",
+        "date": "2024-11-16",
+        "start": "14:00",
+        "end": "15:00",
+        "type": "presentación",
+        "room": "A"
+      }
+    ]
+  },
+  {
+    "id": "P002",
+    "title": "AgroSense",
+    "one_liner": "Monitoreo IoT de riego",
+    "summary": "Optimiza agua en cultivos con sensores y predicciones.",
+    "problem": "Sobre/infra riego por falta de datos.",
+    "solution": "Sensores + predicción de evapotranspiración con alertas.",
+    "industries": "Agro",
+    "tech_stack": "Python|MQTT|InfluxDB|Grafana",
+    "trl": "Prototipo",
+    "demo_url": "https://demo.example/agro",
+    "repo_url": "https://repo.example/agro",
+    "site_url": "https://site.example/agro",
+    "contact_url": "mailto:equipo2@example.com",
+    "team": "PM|IoT|Data",
+    "languages": "ES",
+    "duration_pitch": 5,
+    "has_live_demo": true,
+    "awards": "",
+   "track": "Agro",
+   "speakers": "Equipo AgroSense",
+    "schedules": [
+      {
+       "sub_id": "P002-1",
+        "date": "2024-11-15",
+        "start": "11:15",
+        "end": "12:15",
+        "type": "presentación",
+        "room": "D"
+      },
+      {
+       "sub_id": "P002-2",
+        "date": "2024-11-15",
+        "start": "14:00",
+        "end": "15:00",
+        "type": "presentación",
+        "room": "E"
+      },
+      {
+       "sub_id": "P002-3",
+        "date": "2024-11-16",
+        "start": "10:00",
+        "end": "11:00",
+        "type": "presentación",
+        "room": "B"
+      }
+    ]
+  },
+  {
+    "id": "P003",
+    "title": "LexiLearn",
+    "one_liner": "Tutor de lectura infantil",
+    "summary": "Guía lectura con voz y juegos.",
+    "problem": "Baja motivación y feedback tardío.",
+    "solution": "Asistente por niveles con ejercicios adaptativos.",
+    "industries": "Educación",
+    "tech_stack": "Python|TTS|NLP|Streamlit",
+    "trl": "Piloto",
+    "demo_url": "",
+    "repo_url": "https://repo.example/lexi",
+    "site_url": "https://site.example/lexi",
+    "contact_url": "mailto:equipo3@example.com",
+    "team": "PM|NLP|UX",
+    "languages": "ES|EN",
+    "duration_pitch": 6,
+    "has_live_demo": false,
+    "awards": "",
+   "track": "Educación",
+   "speakers": "Equipo LexiLearn",
+    "schedules": [
+      {
+       "sub_id": "P003-1",
+        "date": "2024-11-15",
+        "start": "10:00",
+        "end": "11:00",
+        "type": "presentación",
+        "room": "F"
+      },
+      {
+       "sub_id": "P003-2",
+        "date": "2024-11-16",
+        "start": "12:30",
+        "end": "13:30",
+        "type": "presentación",
+        "room": "G"
+      }
+    ]
+  },
+  {
+    "id": "P004",
+    "title": "SafeCity",
+    "one_liner": "Alertas de riesgo en rutas urbanas",
+    "summary": "Mapea riesgos por hora y lugar.",
+    "problem": "Usuarios evitan zonas inseguras sin info confiable.",
+    "solution": "Mapa de calor + rutas alternativas seguras.",
+    "industries": "Smart City",
+    "tech_stack": "Python|XGBoost|Leaflet",
+    "trl": "Prototipo",
+    "demo_url": "https://demo.example/safecity",
+    "repo_url": "https://repo.example/safecity",
+    "site_url": "https://site.example/safecity",
+    "contact_url": "mailto:equipo4@example.com",
+    "team": "PM|Data|Frontend",
+    "languages": "ES",
+    "duration_pitch": 8,
+    "has_live_demo": true,
+    "awards": "Mención Innovación",
+   "track": "Smart City",
+   "speakers": "Equipo SafeCity",
+    "schedules": [
+      {
+       "sub_id": "P004-1",
+        "date": "2024-11-15",
+        "start": "12:30",
+        "end": "13:30",
+        "type": "presentación",
+        "room": "H"
+      },
+      {
+       "sub_id": "P004-2",
+        "date": "2024-11-15",
+        "start": "15:15",
+        "end": "15:30",
+        "type": "presentación",
+        "room": "I"
+      },
+      {
+       "sub_id": "P004-3",
+        "date": "2024-11-16",
+        "start": "11:15",
+        "end": "12:15",
+        "type": "presentación",
+        "room": "J"
+      }
+    ]
+  },
+  {
+    "id": "P005",
+    "title": "GreenLog",
+    "one_liner": "Optimización de rutas logísticas",
+    "summary": "Menos CO2 y tiempo en reparto.",
+    "problem": "Rutas subóptimas por múltiples restricciones.",
+    "solution": "Solver multi-objetivo con ventanas de tiempo.",
+    "industries": "Logística",
+    "tech_stack": "Python|OR-Tools|FastAPI",
+    "trl": "Piloto",
+    "demo_url": "",
+    "repo_url": "https://repo.example/greenlog",
+    "site_url": "https://site.example/greenlog",
+    "contact_url": "mailto:equipo5@example.com",
+    "team": "PM|PO|Back",
+    "languages": "ES|EN",
+    "duration_pitch": 8,
+    "has_live_demo": false,
+    "awards": "",
+   "track": "Logística",
+   "speakers": "Equipo GreenLog",
+    "schedules": [
+      {
+       "sub_id": "P005-1",
+        "date": "2024-11-15",
+        "start": "11:15",
+        "end": "12:15",
+        "type": "presentación",
+        "room": "K"
+      },
+      {
+       "sub_id": "P005-2",
+        "date": "2024-11-16",
+        "start": "14:00",
+        "end": "15:00",
+        "type": "presentación",
+        "room": "L"
+      }
+    ]
+  },
+  {
+    "id": "P006",
+    "title": "Talk2Law",
+    "one_liner": "Asistente legal ciudadano",
+    "summary": "Respuestas accesibles y verificables.",
+    "problem": "Dificultad para entender trámites.",
+    "solution": "Chat guiado con fuentes oficiales citadas.",
+    "industries": "Sector Público",
+    "tech_stack": "Python|RAG|LangChain",
+    "trl": "Ida",
+    "demo_url": "",
+    "repo_url": "https://repo.example/talk2law",
+    "site_url": "https://site.example/talk2law",
+    "contact_url": "mailto:equipo6@example.com",
+    "team": "PM|NLP|Legal",
+    "languages": "ES",
+    "duration_pitch": 5,
+    "has_live_demo": false,
+    "awards": "",
+   "track": "Sector Público",
+   "speakers": "Equipo Talk2Law",
+    "schedules": [
+      {
+       "sub_id": "P006-1",
+        "date": "2024-11-15",
+        "start": "14:00",
+        "end": "15:00",
+        "type": "presentación",
+        "room": "M"
+      },
+      {
+       "sub_id": "P006-2",
+        "date": "2024-11-16",
+        "start": "10:00",
+        "end": "11:00",
+        "type": "presentación",
+        "room": "N"
+      },
+      {
+       "sub_id": "P006-3",
+        "date": "2024-11-16",
+        "start": "12:30",
+        "end": "13:30",
+        "type": "presentación",
+        "room": "O"
+      }
+    ]
+  },
+  {
+    "id": "P007",
+    "title": "WellTrack",
+    "one_liner": "Seguimiento bienestar universitario",
+    "summary": "Apoyo temprano y privado.",
+    "problem": "Detección tardía de señales de alerta.",
+    "solution": "Encuestas breves + panel para tutores.",
+    "industries": "Educación",
+    "tech_stack": "Python|Supabase|React",
+    "trl": "Piloto",
+    "demo_url": "https://demo.example/well",
+    "repo_url": "https://repo.example/well",
+    "site_url": "https://site.example/well",
+    "contact_url": "mailto:equipo7@example.com",
+    "team": "PM|DS|FE",
+    "languages": "ES",
+    "duration_pitch": 7,
+    "has_live_demo": true,
+    "awards": "",
+   "track": "Educación",
+   "speakers": "Equipo WellTrack",
+    "schedules": [
+      {
+       "sub_id": "P007-1",
+        "date": "2024-11-15",
+        "start": "10:00",
+        "end": "11:00",
+        "type": "presentación",
+        "room": "P"
+      },
+      {
+       "sub_id": "P007-2",
+        "date": "2024-11-15",
+        "start": "12:30",
+        "end": "13:30",
+        "type": "presentación",
+        "room": "Q"
+      },
+      {
+       "sub_id": "P007-3",
+        "date": "2024-11-16",
+        "start": "11:15",
+        "end": "12:15",
+        "type": "presentación",
+        "room": "R"
+      }
+    ]
+  },
+  {
+    "id": "P008",
+    "title": "ShopLens",
+    "one_liner": "Analítica retail con cámaras",
+    "summary": "Medir atención y conversiones en góndolas.",
+    "problem": "Falta de datos de comportamiento in-store.",
+    "solution": "Detección de trayectorias y hotspots.",
+    "industries": "Retail",
+    "tech_stack": "Python|OpenCV|Dash",
+    "trl": "Prototipo",
+    "demo_url": "",
+    "repo_url": "https://repo.example/shoplens",
+    "site_url": "https://site.example/shoplens",
+    "contact_url": "mailto:equipo8@example.com",
+    "team": "PM|CV|BE",
+    "languages": "EN",
+    "duration_pitch": 6,
+    "has_live_demo": false,
+    "awards": "",
+    "track": "Retail",
+    "speakers": "Equipo ShopLens",
+    "schedules": [
+      {
+       "sub_id": "P008-1",
+        "date": "2024-11-15",
+        "start": "11:15",
+        "end": "12:15",
+        "type": "presentación",
+        "room": "S"
+      },
+      {
+       "sub_id": "P008-2",
+        "date": "2024-11-16",
+        "start": "10:00",
+        "end": "11:00",
+        "type": "presentación",
+        "room": "T"
+      },
+      {
+       "sub_id": "P008-3",
+        "date": "2024-11-16",
+        "start": "15:15",
+        "end": "15:30",
+        "type": "presentación",
+        "room": "U"
+      }
+    ]
+  }
+]

@@ -1,25 +1,45 @@
+
 import os
 import pandas as pd
 import streamlit as st
+import json
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 
 @st.cache_data
 def load_projects():
-    df = pd.read_csv(os.path.join(DATA_DIR, "projects.csv"))
+    json_path = os.path.join(DATA_DIR, "projects.json")
+    with open(json_path, encoding="utf-8") as f:
+        data = json.load(f)
+    df = pd.DataFrame(data)
     # Parsear listas (separadas por '|')
     for col in ["industries","tech_stack","team","languages","awards"]:
         if col in df.columns:
-            df[col] = df[col].fillna("").apply(lambda s: [v.strip() for v in s.split("|") if v.strip()])
+            df[col] = df[col].fillna("").apply(lambda s: s if isinstance(s, list) else [v.strip() for v in s.split("|") if v.strip()])
     if "has_live_demo" in df.columns:
         df["has_live_demo"] = df["has_live_demo"].fillna(False).astype(bool)
     return df
 
 @st.cache_data
 def load_sessions():
-    df = pd.read_csv(os.path.join(DATA_DIR, "sessions.csv"))
-    df["speakers"] = df["speakers"].fillna("").apply(lambda s: [v.strip() for v in s.split("|") if v.strip()])
-    df["project_ids"] = df["project_ids"].fillna("").apply(lambda s: [v.strip() for v in s.split("|") if v.strip()])
+    json_path = os.path.join(DATA_DIR, "projects.json")
+    with open(json_path, encoding="utf-8") as f:
+        data = json.load(f)
+    # Extraer y combinar todos los schedules de todos los proyectos
+    sessions = []
+    for project in data:
+        pid = project.get("id")
+        title = project.get("title")
+        track = project.get("track")
+        speakers = project.get("speakers")
+        for sched in project.get("schedules", []):
+            session = sched.copy()
+            session["project_id"] = pid
+            session["project_title"] = title
+            session["track"] = track
+            session["speakers"] = speakers
+            sessions.append(session)
+    df = pd.DataFrame(sessions)
     return df
 
 @st.cache_data

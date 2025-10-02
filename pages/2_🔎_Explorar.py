@@ -89,13 +89,13 @@ else:
                                 st.session_state["compare"].append(row['id'])
                 with c3:
                     if st.button("📄 Ver ficha", key=f"ver_{row['id']}"):
-                        st.experimental_set_query_params(project=row['id'])
-                        st.experimental_rerun()
+                        st.query_params.update({"project": row['id']})
+                        st.rerun()
 
 # Detalle (ficha) si hay query param
-params = st.experimental_get_query_params()
+params = st.query_params
 if "project" in params:
-    proj_id = params["project"][0]
+    proj_id = params["project"]
     proj = get_project_by_id(proj_id)
     if proj is not None:
         st.markdown("---")
@@ -109,16 +109,23 @@ if "project" in params:
         st.subheader("Solución e impacto")
         st.write(proj['solution'] or "—")
 
+        import pandas as pd
         c1, c2, c3 = st.columns(3)
         with c1:
-            if proj['demo_url']:
+            if proj['demo_url'] and isinstance(proj['demo_url'], str) and not pd.isna(proj['demo_url']):
                 st.link_button("🎥 Ver demo", proj['demo_url'])
+            else:
+                st.caption("Sin demo disponible")
         with c2:
-            if proj['repo_url']:
+            if proj['repo_url'] and isinstance(proj['repo_url'], str) and not pd.isna(proj['repo_url']):
                 st.link_button("📦 Repositorio", proj['repo_url'])
+            else:
+                st.caption("Sin repositorio")
         with c3:
-            if proj['contact_url']:
+            if proj['contact_url'] and isinstance(proj['contact_url'], str) and not pd.isna(proj['contact_url']):
                 st.link_button("✉️ Contactar", proj['contact_url'])
+            else:
+                st.caption("Sin contacto disponible")
 
         # Q&A simple (formativo)
         st.subheader("Preguntas y Respuestas (Q&A)")

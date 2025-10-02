@@ -1,0 +1,6 @@
+id,title,type,track,speakers,start,end,project_ids,location,streaming_url
+S001,Keynote de apertura,seminar,General,Decano|Invitado,2025-11-21 09:00,2025-11-21 10:00,,Sala Virtual A,https://stream.example/open
+S002,Panel IA en Salud,panel,Salud,MD|Data Scientist,2025-11-21 11:00,2025-11-21 12:00,P001,Panel Salud,https://stream.example/health
+S003,Demo AgroSense,expo,Agro,Equipo AgroSense,2025-11-21 12:15,2025-11-21 12:45,P002,Sala Demo 1,https://stream.example/agro
+S004,Rutas seguras para Smart Cities,seminar,Smart City,Equipo SafeCity,2025-11-21 15:00,2025-11-21 15:45,P004,Sala Smart,https://stream.example/safe
+S005,Optimización logística verde,seminar,Logística,Equipo GreenLog,2025-11-21 16:00,2025-11-21 16:45,P005,Sala Logística,https://stream.example/green

@@ -12,7 +12,7 @@
     align-items: center;
     gap: 10px;
     margin: 0 auto;
-    width: 30%;
+    width: 35%;
 };
 .stButton > button:hover {
     background-color: #7b7d8a;

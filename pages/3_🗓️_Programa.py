@@ -46,12 +46,12 @@ if days:
                     if row['sub_id']:
                         st.link_button("▶️ Ver transmisión en sala " + str(row['room']), row['sub_id'])
                 with c2:
-                    add = st.button("➕ Añadir a mi agenda", key=f"agenda_{row['sub_id']}")
-                    if add:
-                        if row['sub_id'] not in st.session_state["agenda"]:
+                    if row['sub_id'] in st.session_state["agenda"]:
+                        st.button("✅ En agenda", key=f"agenda_{row['sub_id']}", disabled=True)
+                    else:
+                        add = st.button("➕ Añadir a mi agenda", key=f"agenda_{row['sub_id']}")
+                        if add:
                             st.session_state["agenda"].append(row['sub_id'])
-                            st.toast("Sesión añadida a tu agenda")
-                        else:
-                            st.warning("Esta sesión ya está en tu agenda")
+                            st.rerun()
 else:
     st.info("Aún no hay sesiones cargadas.")

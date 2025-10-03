@@ -12,11 +12,9 @@ st.title("⭐ Mi Feria")
 # Favoritos
 st.subheader("Favoritos")
 fav_ids = st.session_state["favorites"]
-print("\n\n",fav_ids)
 if not fav_ids:
     st.info("Aún no tienes favoritos. En **Explorar** puedes marcar ⭐ proyectos para guardarlos aquí.")
 else:
-    print(projects.columns)
     fav_df = projects[projects['id'].isin(fav_ids)][["id","title","one_liner","industries"]]
     fav_df["industries"] = fav_df["industries"].apply(lambda x: ", ".join(x))
     st.dataframe(fav_df.set_index("id"))

@@ -69,13 +69,12 @@ else:
                 c1, c2, c3 = st.columns(3)
                 with c1:
                     fav = row['id'] in st.session_state["favorites"]
-                    if st.button("⭐ Guardar" if not fav else "⭐ Quitar", key=f"fav_{row['id']}"):
-                        if fav:
-                            st.session_state["favorites"].remove(row['id'])
-                            st.toast("Quitado de favoritos")
-                        else:
+                    if fav:
+                        st.button("⭐ Favorito", key=f"fav_{row['id']}", disabled=True)
+                    else:
+                        if st.button("☆ Añadir a favoritos", key=f"fav_{row['id']}"):
                             st.session_state["favorites"].append(row['id'])
-                            st.toast("Agregado a favoritos")
+                            st.rerun()
                 with c2:
                     in_comp = row['id'] in st.session_state["compare"]
                     label = "🧪 Comparar" if not in_comp else "🧪 Quitar"

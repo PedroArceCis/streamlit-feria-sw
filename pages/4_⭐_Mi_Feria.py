@@ -27,7 +27,7 @@ else:
         with c2:
             if st.button("❌ Eliminar", key=f"del_fav_{row['id']}"):
                 st.session_state["favorites"].remove(row['id'])
-                st.experimental_rerun()
+                st.rerun()
 
 # Comparación
 st.subheader("Comparación (hasta 3)")
@@ -58,7 +58,7 @@ else:
         with c2:
             if st.button("❌ Eliminar", key=f"del_ag_{row['sub_id']}"):
                 st.session_state["agenda"].remove(row['sub_id'])
-                st.experimental_rerun()
+                st.rerun()
     ics_str = build_ics(ag_df)
     st.download_button("⬇️ Descargar .ics", data=ics_str, file_name="mi_agenda.ics", mime="text/calendar")
 

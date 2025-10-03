@@ -7,7 +7,7 @@ sessions = load_sessions()
 
 st.title("🗓️ Programa")
 
-
+print(sessions.columns)
 # Extraer días y tracks correctamente usando el campo 'date' de cada sesión
 sessions['date'] = pd.to_datetime(sessions['date']).dt.date
 days = sorted(sessions['date'].unique())

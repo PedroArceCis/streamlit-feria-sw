@@ -83,7 +83,7 @@ st.markdown("""
 # Botón centrado con st.button() nativo
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-	if st.button("EXPLORAR AHORA →", use_container_width=True):
+	if st.button("🔎 EXPLORAR AHORA →", use_container_width=True):
 		st.switch_page("pages/2_🔎_Explorar.py")
 
 # FOOTER centrado

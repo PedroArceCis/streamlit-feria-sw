@@ -60,4 +60,4 @@ else:
     ics_str = build_ics(ag_df)
     st.download_button("⬇️ Descargar .ics", data=ics_str, file_name="mi_agenda.ics", mime="text/calendar")
 
-st.caption("Recuerda: puedes quitar favoritos o limpiar comparación cuando quieras (control y libertad del usuario).")
+st.caption("Recuerda: puedes quitar favoritos o limpiar comparación cuando quieras.")

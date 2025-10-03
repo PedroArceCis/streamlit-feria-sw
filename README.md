@@ -6,6 +6,11 @@
 pip install -r requirements.txt
 streamlit run app.py
 ```
+### Opción alternativa
+```bash
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+```
 La app multipágina incluye: Home, Explorar, Programa y Mi Feria.
 Los datos de ejemplo están en `/data`. Puedes editarlos libremente.
 

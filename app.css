@@ -4,7 +4,7 @@
     border: none;
     padding: 12px 36px;
     border-radius: 16px;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -15,6 +15,6 @@
     width: 35%;
 };
 .stButton > button:hover {
-    background-color: #7b7d8a;
+    background-color: #bc490f;
     border-color: #74032c;
 }

@@ -17,7 +17,7 @@ col1, col2 = st.columns(2)
 with col1:
     sel_day = st.selectbox("Día", days if days else ["—"])
 with col2:
-    sel_track = st.selectbox("Track", ["(Todos)"] + tracks)
+    sel_track = st.selectbox("Categoría", ["(Todos)"] + tracks)
 
 if days:
     mask = sessions['date'] == sel_day
